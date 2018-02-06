@@ -13,8 +13,9 @@ import static java.lang.String.format;
 import static java.lang.String.valueOf;
 
 /**
- * Miguel Martínez Serrano - miguelms.es
- * */
+ * @author Miguel Martínez Serrano - miguelms.es
+ *
+ **/
 public class MainActivity extends AppCompatActivity {
 
     private TextView txLetraDni;
