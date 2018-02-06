@@ -6,6 +6,6 @@
     <string name="error_longitud_caracteres">El DNI debe tener 8 caracteres de longitud</string>
     <string name="copiar_dni">copiar dni</string>
     <string name="dni_copied_to_clipboard">DNI copiado al portapapeles</string>
-    <string name="enviar_dni">Enviar dni</string>
+    <string name="enviar_dni">Enviar DNI</string>
     <string name="envia_tu_dni">Envia tu DNI</string>
 </resources>
