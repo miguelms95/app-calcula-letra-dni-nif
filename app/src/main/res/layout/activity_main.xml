@@ -35,14 +35,11 @@
         android:id="@+id/txLetraDni"
         android:layout_width="wrap_content"
         android:layout_height="66dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginTop="20dp"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btCalcular"
-        app:layout_constraintVertical_bias="0.184" />
+        app:layout_constraintTop_toBottomOf="@+id/btCalcular" />
 
     <Button
         android:id="@+id/btCalcular"
@@ -54,4 +51,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txNumerosDNI" />
+
+    <Button
+        android:id="@+id/btCopiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/copiar_dni"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txLetraDni" />
 </android.support.constraint.ConstraintLayout>

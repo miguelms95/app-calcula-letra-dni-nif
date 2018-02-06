@@ -4,4 +4,5 @@
     <string name="n_meros_de_tu_dni">Números de tu DNI</string>
     <string name="calcular_letra">Calcular letra</string>
     <string name="error_longitud_caracteres">El DNI debe tener 8 caracteres de longitud</string>
+    <string name="copiar_dni">copiar dni</string>
 </resources>
