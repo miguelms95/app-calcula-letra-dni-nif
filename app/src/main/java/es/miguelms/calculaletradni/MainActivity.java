@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         ClipData clip = ClipData.newPlainText("texto", txLetraDni.getText().toString());
         if (clipboard != null) {
             clipboard.setPrimaryClip(clip);
+            Toast.makeText(this, R.string.dni_copied_to_clipboard, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -64,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
         if(txNumerosDni.getText().toString().length() == 8){
             String caracteresDivision = "TRWAGMYFPDXBNJZSQVHLCKE";
 
-            int valor = Integer.valueOf(txNumerosDni.getText().toString());
+            int valor = Integer.valueOf(txNumerosDni.getText().toString().replace(" ",""));
             int resultado = valor%23;
 
             String letraDNI = valueOf(caracteresDivision.charAt(resultado));
-            Toast.makeText(this, "La letra es " + letraDNI, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "La letra es " + letraDNI, Toast.LENGTH_SHORT).show();
             txLetraDni.setText(String.format("%s %s", txNumerosDni.getText().toString(), letraDNI));
             ocultaTeclado();
             btCopiar.setVisibility(View.VISIBLE);
