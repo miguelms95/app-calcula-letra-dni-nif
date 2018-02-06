@@ -3,6 +3,7 @@ package es.miguelms.calculaletradni;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txLetraDni;
     private EditText txNumerosDni;
     private View btCopiar;
+    private View btEnviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button btCalcular = findViewById(R.id.btCalcular);
         btCopiar = findViewById(R.id.btCopiar);
-        
+        btEnviar = findViewById(R.id.btShare);
+
         txLetraDni = findViewById(R.id.txLetraDni);
         txNumerosDni = findViewById(R.id.txNumerosDNI);
 
@@ -48,13 +51,27 @@ public class MainActivity extends AppCompatActivity {
                 copiarAlPortapapeles();
             }
         });
+
+        btEnviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                compartirDNI();
+            }
+        });
         
-        
+    }
+
+    private void compartirDNI() {
+        String shareBody = txLetraDni.getText().toString().replace(" ","");
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.envia_tu_dni)));
     }
 
     private void copiarAlPortapapeles() {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("texto", txLetraDni.getText().toString());
+        ClipData clip = ClipData.newPlainText("texto", txLetraDni.getText().toString().replace(" ",""));
         if (clipboard != null) {
             clipboard.setPrimaryClip(clip);
             Toast.makeText(this, R.string.dni_copied_to_clipboard, Toast.LENGTH_LONG).show();
@@ -73,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             txLetraDni.setText(String.format("%s %s", txNumerosDni.getText().toString(), letraDNI));
             ocultaTeclado();
             btCopiar.setVisibility(View.VISIBLE);
+            btEnviar.setVisibility(View.VISIBLE);
         }else{
             Toast.makeText(getApplicationContext(),
                     R.string.error_longitud_caracteres,Toast.LENGTH_LONG).show();
