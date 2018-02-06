@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calcula Letra DNI</string>
+    <string name="introduce_los_numeros_descripcion">Introduce los números de tu DNI, y calcula la letra.</string>
+    <string name="n_meros_de_tu_dni">Números de tu DNI</string>
+    <string name="calcular_letra">Calcular letra</string>
+    <string name="error_longitud_caracteres">El DNI debe tener 8 caracteres de longitud</string>
+</resources>
