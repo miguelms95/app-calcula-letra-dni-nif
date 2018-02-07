@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="52dp"
         android:text="@string/enviar_dni"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,5 +80,5 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btCopiar"
         app:layout_constraintTop_toBottomOf="@+id/txLetraDni"
-        app:layout_constraintVertical_bias="0.273" />
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>
