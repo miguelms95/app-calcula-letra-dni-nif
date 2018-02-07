@@ -7,6 +7,6 @@
     <string name="error_longitud_caracteres">The NIF must be  8 characters length</string>
     <string name="copiar_dni">copy nif</string>
     <string name="dni_copied_to_clipboard">NIF copied to clipboard</string>
-    <string name="enviar_dni">Share DNI</string>
-    <string name="envia_tu_dni">Share your DNI</string>
+    <string name="enviar_dni">Share NIF</string>
+    <string name="envia_tu_dni">Share your NIF</string>
 </resources>
